@@ -1,0 +1,14 @@
+.button{
+    position: absolute;
+    
+  }
+
+  .no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+  
+  
+  }
+  .table{
+    border-radius: 25px;
+  }

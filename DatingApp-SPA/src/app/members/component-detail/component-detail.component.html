@@ -1,0 +1,170 @@
+<div class="container emp-profile text-dark">
+  <form method="post">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="profile-img">
+          <img src="{{components.photoUrl}}" alt="" />
+          <div class="file btn btn-lg btn-primary">
+            Change Photo
+            <input type="file" name="file" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="profile-head">
+          <h5>
+            {{components.mnf}}
+          </h5>
+          <h6>
+            Ressistor, Capacitor, IC and etc.
+          </h6>
+          <p class="proile-rating">SEARCHED : <span>125 times</span></p>
+          <ul class="nav nav-tabs md-tabs" id="myTabMD" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="home-tab-md" data-toggle="tab" href="#home-md" role="tab"
+                aria-controls="home-md" aria-selected="true">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="profile-tab-md" data-toggle="tab" href="#profile-md" role="tab"
+                aria-controls="profile-md" aria-selected="false">More</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="contact-tab-md" data-toggle="tab" href="#contact-md" role="tab"
+                aria-controls="contact-md" aria-selected="false">Photos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="reels-tab-md" data-toggle="tab" href="#reels-md" role="tab"
+                aria-controls="reels-md" aria-selected="false">Reels</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+      <div class="col-md-2">
+        <button class="btn btn-info btn-sm w-150" [routerLink]="['/members']">Back</button>
+        <button class="btn btn-dark btn-sm w-150" [routerLink]="['/member/edit2/', components.id]">Edit</button>
+        <button class="btn btn-dark btn-sm w-150" (click)="printf()">Print</button>
+        <button class="btn btn-dark btn-sm w-150">Delete</button>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="profile-work">
+          <p>LINKS</p>
+          <a href="{{components.furl}}" target="_blank">Farnell Link</a><br />
+          <a href="{{components.durl}}" target="_blank">DigiKey Link</a><br />
+          <a href="{{components.murl}}" target="_blank">Mouser Link</a>
+
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <div class="tab-content " id="myTabContentMD">
+
+          <div class="tab-pane fade show active" id="home-md" role="tabpanel" aria-labelledby="home-tab-md">
+            <div class="row">
+              <div class="col-md-6">
+                <label>Manufacturer number</label>
+              </div>
+              <div class="col-md-6">
+                <h6>{{components.mnf}}</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Nominal</label>
+              </div>
+              <div class="col-md-6">
+                <h6>{{components.nominal}}</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Type</label>
+              </div>
+              <div class="col-md-6">
+                <h6>{{components.type}}</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Size</label>
+              </div>
+              <div class="col-md-6">
+                <h6>{{components.size}}</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Manufacturer</label>
+              </div>
+              <div class="col-md-6">
+                <h6>{{components.manufacturer}}</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Nominal</label>
+              </div>
+              <div class="col-md-6">
+                <h6>{{components.nominal}}</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Description</label>
+              </div>
+              <div class="col-md-6">
+                <h6> {{components.size}} {{components.nominal}} <strong>{{components.mnf}}</strong></h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Detail Description</label>
+              </div>
+              <div class="col-md-6">
+                <h6>{{components.detdescription}}</h6>
+              </div>
+            </div>
+            
+          </div>
+
+
+
+          <div class="tab-pane fade" id="profile-md" role="tabpanel" aria-labelledby="profile-tab-md">
+            <div class="row">
+              <div class="col-md-6">
+                <label>Manufacturer number</label>
+              </div>
+              <div class="col-md-6">
+                <h6>{{components.mnf}}</h6>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <label>Detail Description</label>
+              </div>
+              <div class="col-md-6">
+                <h6>{{components.detdescription}}</h6>
+              </div>
+              <qrcode [qrdata]="'Your data string'" [width]="20" [errorCorrectionLevel]="'M'"></qrcode>
+              <ngx-barcode [bc-format]="'MSI'" [bc-value]="'123'" [bc-display-value]="true">
+              </ngx-barcode>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="contact-md" role="tabpanel" aria-labelledby="profile-tab-md">
+            <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>
+          </div>
+          <div class="tab-pane fade" id="reels-md" role="tabpanel" aria-labelledby="reels-tab-md">
+            <app-usedreel-list></app-usedreel-list>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

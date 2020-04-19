@@ -1,0 +1,45 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Rites Nr.</th>
+        <th scope="col">Kiekis </th>
+        <th scope="col">Mnf </th>
+        <th scope="col">Rites vieta</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reels of reels">
+        <td>{{reels.id}}</td>
+        <td>{{reels.qty}}</td>
+        <td>{{reels.cMnf}}</td>
+        <td>
+            <div class="row">
+                <div class="col-sm-8">
+                    <qrcode [qrdata]="'285'" [width]="5" [errorCorrectionLevel]="'M'"></qrcode>
+                </div>
+                <div class="col-sm-4">
+                    246
+                </div>
+            </div>
+            
+        </td>
+      </tr>
+      
+    </tbody>
+    <thead>
+        <tr>
+          <th scope="col">Viso ričių</th>
+          <th scope="col">Bendras kiekis </th>
+          <th scope="col"> </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ilgis}}</td>
+          <td>{{suma}}</td>
+          <td></td>
+        </tr>
+        
+      </tbody>
+  </table>

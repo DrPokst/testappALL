@@ -1,0 +1,25 @@
+mat-sidenav-content{
+    height: 100%;
+    width:  auto;
+    background-image: url("C:/Users/Dolce/TestApp/DatingApp-SPA/img/3.png");
+}
+mat-sidenav-container{
+    height: 100%;
+}
+
+.bg-spalva{
+    border-bottom: 1px solid rgb(151, 151, 151);
+    border-top: 0px solid black;
+    border-left: 0px solid black;
+    border-right: 0px solid black;
+}
+.navbar{
+    background-image: url(https://wallpaperaccess.com/full/1119975.jpg);
+    height: 43px;
+}
+i:hover{
+    color: chartreuse;
+}
+i{
+    color: rgb(255, 255, 255);
+}

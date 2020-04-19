@@ -1,0 +1,7 @@
+<div class="container mt-5">
+  <div class="row">
+    <div *ngFor="let components of components" class="col-lg-2 col-md-3 col-sm-6">
+      <app-component-card [components]="components"></app-component-card>
+    </div>
+  </div>
+</div>
