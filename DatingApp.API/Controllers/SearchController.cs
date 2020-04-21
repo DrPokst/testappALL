@@ -36,7 +36,7 @@ namespace DatingApp.API.Controllers
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetComponents(int id)
-        {
+        {   
             var components = await _repo.GetComponents(id);
             var componentsToReturn= _mapper.Map<ComponetsForListDto>(components);
 
@@ -60,24 +60,27 @@ namespace DatingApp.API.Controllers
          [HttpPost("registercomponent")]
         public async Task<IActionResult> RegisterComponent(ComponetsForRegisterDto ComponetsForRegisterDto)
         {
-            return StatusCode(201);
-            if (await _repo.MnFExists(ComponetsForRegisterDto.Mnf))
-                return BadRequest("Mnf already taken");
 
             var ComponentasToCreate = new Componentas
-            {
+            {   
                 Id = ComponetsForRegisterDto.Id,
                 Mnf = ComponetsForRegisterDto.Mnf,
+                Manufacturer = ComponetsForRegisterDto.Manufacturer,
+                Detdescription = ComponetsForRegisterDto.Detdescription,
+                BuhNr = ComponetsForRegisterDto.BuhNr,
                 Size = ComponetsForRegisterDto.Size,
-                Nominal = ComponetsForRegisterDto.Nominal,
                 Type = ComponetsForRegisterDto.Type,
+                Nominal = ComponetsForRegisterDto.Nominal,
+                Furl = ComponetsForRegisterDto.Furl,
+                Durl = ComponetsForRegisterDto.Durl,
+                Murl = ComponetsForRegisterDto.Murl
             };
-            //var createComponent = await _repo.RegisterComponent(ComponentasToCreate);
 
-            //var createUser = await _repo.Register(MnfToCreate, ComponetsForRegisterDto.Password);
-
+            var createComponent = await _repo.RegisterComponents(ComponentasToCreate);
+            
             return StatusCode(201);
         }
+        
 
 
     }

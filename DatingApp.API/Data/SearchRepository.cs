@@ -37,10 +37,21 @@ namespace DatingApp.API.Data
             return componentass;
         }
 
+        public async Task<Componentas> RegisterComponents(Componentas componentas)
+        {   
+            
+            await _context.Componentass.AddAsync(componentas);
+            await _context.SaveChangesAsync();
+
+            return componentas;
+
+        }
+
         public async Task<bool> SaveAll()
         {
             return await _context.SaveChangesAsync() > 0;
         }
+
         public async Task<bool> MnFExists(string Mnf)
         {
             

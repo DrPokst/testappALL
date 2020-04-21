@@ -23,4 +23,8 @@ getComponent(id): Observable<Components>{
 updateComponent(id: number, component: Components){
   return this.http.put(this.baseUrl + 'search/' + id, component);
 }
+
+registerComponent(model: any){
+  return this.http.post(this.baseUrl + 'search/registercomponent', model);
+}
 }

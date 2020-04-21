@@ -1,11 +1,14 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DatingApp.API.Models
 {
     public class Componentas
     {
+        
         public int Id { get; set; }
         public string Mnf { get; set; }
         public string Manufacturer { get; set; }

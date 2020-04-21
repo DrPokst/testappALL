@@ -11,6 +11,7 @@ namespace DatingApp.API.Data
          Task<bool> SaveAll();
          Task<IEnumerable<Componentas>> GetComponents();
          Task<Componentas> GetComponents(int id);
+        Task<Componentas> RegisterComponents(Componentas componentas);
          Task<bool> MnFExists(string Mnf);
        
     }
