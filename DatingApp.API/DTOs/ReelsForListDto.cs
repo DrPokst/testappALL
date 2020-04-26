@@ -10,6 +10,7 @@ namespace DatingApp.API.DTOs
         public string CMnf { get; set; }
         public int QTY { get; set; }
         public string PhotoUrl2 { get; set; }
+        public string Location { get; set; }
         public ICollection<Photo2> Photos2 { get; set; }
     }
 }

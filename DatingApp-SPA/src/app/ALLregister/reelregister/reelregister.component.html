@@ -1,17 +1,21 @@
 <div class="container emp-profile text-dark">
     <h3 >Reel Registration Form</h3>
     <div class="col-lg-12 well">
+        <form #registerForm="ngForm" (ngSubmit)="registerreel()">
         <div class="row">
             <div class="col-sm-12">
                 <div class="row">
                     <div class="col-sm-6 input-group-sm">
                         <label>Component</label>
-                        <input type="text" placeholder="Enter Manufacturer Number.." class="form-control">
+                        <input type="text" required name="CMnf" placeholder="Enter Manufactuer Nr Here.."
+                            class="form-control" required [(ngModel)]="model.CMnf">
                     </div>
                     <div class="col-sm-6 input-group-sm ">
                         <label>QTY</label>
-                        <input type="text" placeholder="Enter Manufacturer.." class="form-control">
+                        <input type="number" required name="QTY" placeholder="Enter QTY Here.."
+                            class="form-control" required [(ngModel)]="model.QTY">
                     </div>
+                   
                 </div>
                 <div class="row">
                     <div class="col-sm-6">
@@ -28,7 +32,8 @@
                             <button type="button" class="btn1 btn-lg ">Print</button>
                         </div>
                         <div class="mt-1">
-                            <button type="button" class="btn1 btn-lg btn-info">Submit</button>
+                            <button [disabled]="!registerForm.valid" class="btn1 btn-lg" type="submit"><i
+                                class="fa fa-check mr-2"></i>Register</button>
                         </div>
                     </div>
                 </div>
@@ -38,6 +43,7 @@
                 
             </div>
         </div>
+    </form>
     </div>
 
 </div>

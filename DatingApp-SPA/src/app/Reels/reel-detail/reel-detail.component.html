@@ -26,7 +26,7 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" id="profile-tab-md" data-toggle="tab" href="#profile-md" role="tab"
-                  aria-controls="profile-md" aria-selected="false">Profile</a>
+                  aria-controls="profile-md" aria-selected="false">Location</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" id="contact-tab-md" data-toggle="tab" href="#contact-md" role="tab"
@@ -83,46 +83,10 @@
                   <h6>{{reels.id}}</h6>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <label>Size</label>
-                </div>
-                <div class="col-md-6">
-                  
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <label>Manufacturer</label>
-                </div>
-                <div class="col-md-6">
-                  
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <label>Nominal</label>
-                </div>
-                <div class="col-md-6">
-                  
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <label>Description</label>
-                </div>
-                <div class="col-md-6">
-                  
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <label>Detail Description</label>
-                </div>
-                <div class="col-md-6">
-                  
-                </div>
-              </div>
+              
+              
+              
+              
               
             </div>
   
@@ -131,23 +95,22 @@
             <div class="tab-pane fade" id="profile-md" role="tabpanel" aria-labelledby="profile-tab-md">
               <div class="row">
                 <div class="col-md-6">
-                  <label>Manufacturer number</label>
+                  <label>Location</label>
                 </div>
                 <div class="col-md-6">
-                  <h6>C22202016549846</h6>
+                  <h6>{{reels.location}}</h6>
                 </div>
               </div>
   
               <div class="row">
                 <div class="col-md-6">
-                  <label>Detail Description</label>
+                  <label>Location QR code</label>
                 </div>
                 <div class="col-md-6">
-                  <h6>100 Ohms ±1% 2W Chip Resistor 2512 (6432 Metric) Automotive AEC-Q200 Thick Film</h6>
+                  <qrcode qrdata="{{reels.location}}" [width]="20" [errorCorrectionLevel]="'M'"></qrcode>
                 </div>
-                <qrcode [qrdata]="'Your data string'" [width]="20" [errorCorrectionLevel]="'M'"></qrcode>
-                <ngx-barcode [bc-format]="'MSI'" [bc-value]="'123'" [bc-display-value]="true">
-                </ngx-barcode>
+                
+                
               </div>
             </div>
   

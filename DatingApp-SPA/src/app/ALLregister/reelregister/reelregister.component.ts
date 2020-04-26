@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ReelService } from 'src/app/_services/reel.service';
+import { AlertifyService } from 'src/app/_services/alertify.service';
 
 @Component({
   selector: 'app-reelregister',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reelregister.component.css']
 })
 export class ReelregisterComponent implements OnInit {
-
-  constructor() { }
+  model: any = {};
+  
+  constructor(private reelService: ReelService, private  alertify: AlertifyService) { }
 
   ngOnInit(): void {
+  }
+
+  registerreel(){
+    this.reelService.registerReel(this.model).subscribe(()=>{
+      this.alertify.success('sekmingai uzregistruota');
+    }, error => {
+      this.alertify.error(error);
+    });
+    console.log(this.model);
   }
 
 }

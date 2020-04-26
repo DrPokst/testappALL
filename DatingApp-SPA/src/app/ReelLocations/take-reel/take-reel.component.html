@@ -1,0 +1,36 @@
+<div class="container emp-profile text-dark">
+    <h3>Take From the Shelf</h3>
+    <div class="col-lg-12 well">
+        <form #registerForm="ngForm" (ngSubmit)="SetLocation()">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row">
+
+                        <div class="col-sm-6 input-group-sm">
+                            <label>Id</label>
+                            <input type="text" required name="Id" placeholder="Enter ID Nr Here.."
+                                class="form-control" required [(ngModel)]="model.Id">
+                        </div>
+                        <div class="col-sm-6 input-group-sm">
+                            <label>Manufacturer</label>
+                            <input type="text" required name="Mnf" placeholder="Enter Manufactuer Nr Here.."
+                                class="form-control" required [(ngModel)]="model.Mnf">
+                        </div>
+
+
+                        <div class="col-sm-6 mt-1">
+                            <button [disabled]="!registerForm.valid" class="btn1 btn-lg" type="submit"><i
+                                    class="fa fa-check mr-2"></i>TAKE</button>
+                        </div>
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

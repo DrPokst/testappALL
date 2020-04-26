@@ -21,4 +21,14 @@ getReel(id): Observable<Reels>{
 updateReel(id: number, reel: Reels){
   return this.http.put(this.baseUrl + 'reel/' + id, reel);
 }
+registerReel(model: any){
+  return this.http.post(this.baseUrl + 'reel/registerreel', model);
+}
+SetLocation(model: any){
+  return this.http.post(this.baseUrl + 'location/put', model);
+}
+ResetLocation(model: any){
+  return this.http.post(this.baseUrl + 'location/take', model);
+}
+
 }

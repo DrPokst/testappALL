@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule, TabsModule } from 'ngx-bootstrap';
 import { RouterModule } from '@angular/router';
@@ -11,13 +11,17 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
 import { QRCodeModule } from 'angularx-qrcode';
 import { NgxBarcodeModule } from 'ngx-barcode';
+import { FileUploadModule } from 'ng2-file-upload';
 
 import { AppComponent } from './app.component';
+
+import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { NavComponent } from './nav/nav.component';
 import { AuthService } from './_services/auth.service';
 import { ReelCardComponent } from './Reels/reel-card/reel-card.component';
 import { ReelDetailComponent } from './Reels/reel-detail/reel-detail.component';
 import { ReelEditComponent } from './Reels/reel-edit/reel-edit.component';
+
 
 
 import { HomeComponent } from './home/home.component';
@@ -50,6 +54,10 @@ import { AzureloginComponent } from './azurelogin/azurelogin.component';
 import { ReelsListComponent } from './Reels/reels-list/reels-list.component';
 import { UsedreelListComponent } from './members/usedreel-list/usedreel-list.component';
 import { UsedreelListResolver } from './_resolvers/usedreel-list.resolver';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
+import { PutReelComponent } from './ReelLocations/put-reel/put-reel.component';
+import { TakeReelComponent } from './ReelLocations/take-reel/take-reel.component';
 const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
 
 export function tokenGetter(){
@@ -80,7 +88,10 @@ export function tokenGetter(){
       ReelCardComponent,
       ReelDetailComponent,
       ReelEditComponent,
-      UsedreelListComponent
+      UsedreelListComponent,
+      PhotoEditorComponent,
+      PutReelComponent,
+      TakeReelComponent
    ],
    imports: [
       BrowserModule,
@@ -90,6 +101,9 @@ export function tokenGetter(){
       CalendarModule,
       QRCodeModule,
       NgxBarcodeModule,
+      MatNativeDateModule,
+      ReactiveFormsModule,
+      FileUploadModule,
       BrowserAnimationsModule,
       BsDropdownModule.forRoot(),
       TabsModule.forRoot(),
@@ -138,7 +152,8 @@ export function tokenGetter(){
       MemberListResolver,
       ComponentEditResolver,
       UsedreelListResolver,
-      PreventUnsavedChanges
+      PreventUnsavedChanges,
+      { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
    ],
    bootstrap: [
       AppComponent

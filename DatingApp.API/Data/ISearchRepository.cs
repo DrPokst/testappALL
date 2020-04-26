@@ -12,6 +12,7 @@ namespace DatingApp.API.Data
          Task<IEnumerable<Componentas>> GetComponents();
          Task<Componentas> GetComponents(int id);
         Task<Componentas> RegisterComponents(Componentas componentas);
+        Task<Photo> GetPhoto(int id);
          Task<bool> MnFExists(string Mnf);
        
     }

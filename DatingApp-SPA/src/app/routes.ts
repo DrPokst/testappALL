@@ -21,6 +21,8 @@ import { ReelDetailComponent } from './Reels/reel-detail/reel-detail.component';
 import { ReelCardComponent } from './Reels/reel-card/reel-card.component';
 import { UsedreelListComponent } from './members/usedreel-list/usedreel-list.component';
 import { UsedreelListResolver } from './_resolvers/usedreel-list.resolver';
+import { PutReelComponent } from './ReelLocations/put-reel/put-reel.component';
+import { TakeReelComponent } from './ReelLocations/take-reel/take-reel.component';
 
 export const appRoutes: Routes = [
     {path: '', component: HomeComponent},
@@ -46,8 +48,9 @@ export const appRoutes: Routes = [
             {path: 'reels', component: ReelsListComponent},
             {path: 'cardreels', component: ReelCardComponent},
             {path: 'comp/:id', component: UsedreelListComponent},
-            {path: 'reels/:id', component: ReelDetailComponent}
-
+            {path: 'reels/:id', component: ReelDetailComponent},
+            {path: 'locations/put', component: PutReelComponent},
+            {path: 'locations/take', component: TakeReelComponent}
         ]
     },
       

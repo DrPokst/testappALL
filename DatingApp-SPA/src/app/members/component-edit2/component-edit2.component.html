@@ -2,7 +2,6 @@
     <strong>Information:</strong> Yra pakeitimu. Neissaugota informacija prarasite
 </div>
 <div class="container emp-profile text-dark">
-    
     <form method="post">
         <div class="row">
             <div class="col-md-4">
@@ -26,13 +25,25 @@
                     <ul class="nav nav-tabs md-tabs" id="myTabMD" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" id="home-tab-md" data-toggle="tab" href="#home-md" role="tab"
-                                aria-controls="home-md" aria-selected="true">Home</a>
+                                aria-controls="home-md" aria-selected="true">About</a>
                         </li>
-
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab-md" data-toggle="tab" href="#profile-md" role="tab"
+                                aria-controls="profile-md" aria-selected="false">More</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="contact-tab-md" data-toggle="tab" href="#contact-md" role="tab"
+                                aria-controls="contact-md" aria-selected="false">Photos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="reels-tab-md" data-toggle="tab" href="#reels-md" role="tab"
+                                aria-controls="reels-md" aria-selected="false">Reels</a>
+                        </li>
                     </ul>
 
                 </div>
             </div>
+
             <div class="col-md-2">
                 <button class="btn btn-dark btn-sm w-150" [routerLink]="['/members/', components.id]">Back</button>
                 <button [disabled]="!editForm.dirty" form="editForm" class="btn btn-info btn-sm w-150  ">Save
@@ -55,9 +66,9 @@
 
             <div class="col-md-8">
                 <div class="tab-content " id="myTabContentMD">
-                    <form #editForm="ngForm" id="editForm" (ngSubmit)="updateComponents()">
-                        <div class="tab-pane fade show active" id="home-md" role="tabpanel"
-                            aria-labelledby="home-tab-md">
+
+                    <div class="tab-pane fade show active" id="home-md" role="tabpanel" aria-labelledby="home-tab-md">
+                        <form #editForm="ngForm" id="editForm" (ngSubmit)="updateComponents()">
                             <div class="row">
                                 <div class="col-md-6">
                                     <label>Manufacturer number</label>
@@ -103,9 +114,45 @@
                                     </h6>
                                 </div>
                             </div>
-                        </div>
+                        </form>
+                    </div>
 
-                    </form>
+                    <div class="tab-pane fade" id="profile-md" role="tabpanel" aria-labelledby="profile-tab-md">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label>Manufacturer number</label>
+                          </div>
+                          <div class="col-md-6">
+                            <h6>{{components.mnf}}</h6>
+                          </div>
+                        </div>
+            
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label>Detail Description</label>
+                          </div>
+                          <div class="col-md-6">
+                            <h6>{{components.detdescription}}</h6>
+                          </div>
+                          <qrcode [qrdata]="'Your data string'" [width]="20" [errorCorrectionLevel]="'M'"></qrcode>
+                          <ngx-barcode [bc-format]="'MSI'" [bc-value]="'123'" [bc-display-value]="true">
+                          </ngx-barcode>
+                        </div>
+                      </div>
+            
+                      <div class="tab-pane fade" id="contact-md" role="tabpanel" aria-labelledby="profile-tab-md">
+                         <!-- <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>  -->
+                        <!-- <app-photo-editor [photos]="components.photos"></app-photo-editor>  -->
+                     
+                    <app-photo-editor [photos]="components.photos"></app-photo-editor>  
+
+                    </div>
+                      <div class="tab-pane fade" id="reels-md" role="tabpanel" aria-labelledby="reels-tab-md">
+                        <app-usedreel-list></app-usedreel-list>
+                      </div>
+            
+                      
+
 
 
 

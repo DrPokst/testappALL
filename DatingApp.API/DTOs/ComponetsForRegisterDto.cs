@@ -6,7 +6,6 @@ namespace DatingApp.API.DTOs
 {
     public class ComponetsForRegisterDto
     {   
-        public int Id { get; set; }
         public string Mnf { get; set; }
         public string Manufacturer { get; set; }
         public string Detdescription { get; set; }

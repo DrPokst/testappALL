@@ -11,6 +11,7 @@ namespace DatingApp.API.Models
         public string CMnf { get; set; }
         public int QTY { get; set; }
         public ICollection<Photo2> Photos2 { get; set; }
+        public string Location { get; set; }
 
     }
 }

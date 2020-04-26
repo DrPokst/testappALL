@@ -12,6 +12,9 @@ namespace DatingApp.API.Data
          Task<bool> SaveAll();
          Task<IEnumerable<Reel>> GetReels();
          Task<Reel> GetReel(int id);
+         Task<Reel> GetReelCMnf(string cMnf);
          Task<Reel[]> GetCompare(int id);
+         Task<Reel> RegisterReel(Reel reel);
+
     }
 }

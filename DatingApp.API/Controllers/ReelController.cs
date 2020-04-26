@@ -41,6 +41,19 @@ namespace DatingApp.API.Controllers
 
             return Ok(reelToReturn);
         }
+        [HttpPost("registerreel")]
+        public async Task<IActionResult> RegisterReel(ReelForRegisterDto reelForRegisterDto)
+        {
+            var ReelToCreate = new Reel
+            {
+                CMnf = reelForRegisterDto.CMnf,
+                QTY = reelForRegisterDto.QTY
+            };
+
+            var CreateReel = await _repo.RegisterReel(ReelToCreate);
+
+            return StatusCode(201);
+        }
         
     }
 }

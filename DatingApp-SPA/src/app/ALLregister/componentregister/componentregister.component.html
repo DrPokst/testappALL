@@ -6,17 +6,12 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="row">
-                        <div class="col-sm-2 input-group-sm">
-                            <label>Component ID</label>
-                            <input type="text" required name="Id" placeholder="Enter Manufacturer Number.."
-                                class="form-control" required [(ngModel)]="model.Id">
-                        </div>
-                        <div class="col-sm-5 input-group-sm">
+                        <div class="col-sm-6 input-group-sm">
                             <label>Manufacturer Number</label>
                             <input type="text" required name="mnf" placeholder="Enter Manufacturer Number.."
                                 class="form-control" required [(ngModel)]="model.Mnf">
                         </div>
-                        <div class="col-sm-5 input-group-sm ">
+                        <div class="col-sm-6 input-group-sm ">
                             <label>Manufacturer</label>
                             <input type="text" required name="Manufacturer" placeholder="Enter Manufacturer.."
                                 class="form-control" required [(ngModel)]="model.Manufacturer">
@@ -74,7 +69,7 @@
                                     class="form-control" required [(ngModel)]="model.Murl">
                             </div>
                             <div class="mt-5">
-                                <button [disabled]="!registerForm.valid" class="btn btn-info mr-2" type="submit"><i
+                                <button [disabled]="!registerForm.valid" class="btn1 btn-lg" type="submit"><i
                                         class="fa fa-check mr-2"></i>Register</button>
                             </div>
 

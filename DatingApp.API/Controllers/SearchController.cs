@@ -63,7 +63,6 @@ namespace DatingApp.API.Controllers
 
             var ComponentasToCreate = new Componentas
             {   
-                Id = ComponetsForRegisterDto.Id,
                 Mnf = ComponetsForRegisterDto.Mnf,
                 Manufacturer = ComponetsForRegisterDto.Manufacturer,
                 Detdescription = ComponetsForRegisterDto.Detdescription,
@@ -80,6 +79,7 @@ namespace DatingApp.API.Controllers
             
             return StatusCode(201);
         }
+        
         
 
 

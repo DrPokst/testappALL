@@ -12,7 +12,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.2"/>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.3"/>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0"/>
-    <PackageReference Include="Microsoft.AspNetCore.App" />
-    <Folder Include="wwwroot\" />
+    <PackageReference Include="Microsoft.AspNetCore.App"/>
+    <PackageReference Include="CloudinaryDotNet" Version="1.10.0"/>
+    <Folder Include="wwwroot\"/>
   </ItemGroup>
 </Project>

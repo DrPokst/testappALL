@@ -59,11 +59,27 @@ namespace DatingApp.API.Data
             return reel;
         }
 
+        public async Task<Reel> GetReelCMnf(string cMnf)
+        {
+           var reel = await _context.Reels.Include(p => p.Photos2).FirstOrDefaultAsync(u => u.CMnf == cMnf);
+
+            return reel;
+        }
+
         public async Task<IEnumerable<Reel>> GetReels()
         {
             var reels = await _context.Reels.Include(p => p.Photos2).ToListAsync();
            
             return reels;
+        }
+
+
+        public async Task<Reel> RegisterReel(Reel reel)
+        {
+            await _context.Reels.AddAsync(reel);
+            await _context.SaveChangesAsync();
+
+            return reel;
         }
 
         public async Task<bool> SaveAll()
